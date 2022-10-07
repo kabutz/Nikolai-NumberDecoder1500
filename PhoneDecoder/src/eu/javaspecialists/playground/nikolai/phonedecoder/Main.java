@@ -1,6 +1,5 @@
 package eu.javaspecialists.playground.nikolai.phonedecoder;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {

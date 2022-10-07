@@ -6,6 +6,7 @@ public interface PhoneNumberDecoder {
      * Decode a phone number of the form
      * ABC555LOVE to the number equivalent
      * such as (222) 555-5683.
+     *
      * @param number has to be a string of
      *               exactly 10 characters in the range
      *               [0-9A-Za-z].
