@@ -2,12 +2,14 @@ package eu.javaspecialists.playground.nikolai.phonedecoder;
 
 import java.util.Scanner;
 
-public class Main {
+public class  Main {
     public static void main(String... args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("input 10-digit alphanumeric phone number (empty to exit): ");
 
-        PhoneNumberDecoder decoder = new PhoneNumberDecoderWithArray();
+        PhoneNumberDecoder decoder = new PhoneNumberDecoderWithConverter(
+                new CharacterConverterArray()
+        );
         while (sc.hasNextLine()) {
             String n = sc.nextLine();
             if (n.isBlank()) return;

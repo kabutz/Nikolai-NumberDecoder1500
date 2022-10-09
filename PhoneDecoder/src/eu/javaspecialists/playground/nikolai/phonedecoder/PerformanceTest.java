@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * I still have to show you how to do that :-)
  */
 public class PerformanceTest {
-    private static final char[] alphabet = new char[36];
+    private static final char[] alphabet = new char[10 + 26 * 2];
     private static String leak;
 
     static {
@@ -21,6 +21,9 @@ public class PerformanceTest {
         for (int i = 0; i < 26; i++) {
             alphabet[i + 10] = (char) ('A' + i);
         }
+        for (int i = 0; i < 26; i++) {
+            alphabet[i + 36] = (char) ('a' + i);
+        }
     }
 
     public static void main(String... args) {
@@ -28,9 +31,9 @@ public class PerformanceTest {
 
         String[] numbers = generateRandomStrings(100_000);
         for (int i = 0; i < 10; i++) {
-            test(new PhoneNumberDecoderWithArray(), numbers);
-            test(new PhoneNumberDecoderWithHashMap(), numbers);
-            test(new PhoneNumberDecoderWithSwitch(), numbers);
+            test(new PhoneNumberDecoderWithConverter(new CharacterConverterArray()), numbers);
+            test(new PhoneNumberDecoderWithConverter(new CharacterConverterWithHashMap()), numbers);
+            test(new PhoneNumberDecoderWithConverter(new CharacterConverterSwitch()), numbers);
             test(new PhoneNumberDecoderWithNestedIf(), numbers);
             System.out.println();
         }
@@ -54,7 +57,7 @@ public class PerformanceTest {
     }
 
     private static void test(PhoneNumberDecoder decoder, String[] numbers) {
-        System.out.print(decoder.getClass().getSimpleName());
+        System.out.print(decoder);
         var running = new AtomicBoolean(true);
         var timer = Executors.newSingleThreadScheduledExecutor();
         timer.schedule(() -> {

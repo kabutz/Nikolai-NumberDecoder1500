@@ -21,7 +21,6 @@ public interface PhoneNumberDecoder {
      */
     default boolean isValidInput(String number) {
         if (number.length() != 10) return false;
-        if (true) return true;
         for (int i = 0; i < number.length(); i++) {
             char c = number.charAt(i);
             if ((c < '0' || c > '9') && (c < 'A' || c > 'Z') && (c < 'a' || c > 'z')) {

@@ -5,7 +5,7 @@ package eu.javaspecialists.playground.nikolai.phonedecoder;
  * make is the final String, and we make that with a simple +, which is very
  * fast in modern Java.
  */
-public abstract class PhoneNumberDecoderWithConverter implements PhoneNumberDecoder {
+public class PhoneNumberDecoderWithConverter implements PhoneNumberDecoder {
     private final CharacterConverter converter;
 
     public PhoneNumberDecoderWithConverter(CharacterConverter converter) {
@@ -22,5 +22,10 @@ public abstract class PhoneNumberDecoderWithConverter implements PhoneNumberDeco
         return "(" + convert(number, i++) + convert(number, i++) + convert(number, i++) + ") "
                 + convert(number, i++) + convert(number, i++) + convert(number, i++) + "-"
                 + convert(number, i++) + convert(number, i++) + convert(number, i++) + convert(number, i++);
+    }
+
+    @Override
+    public String toString() {
+        return "Converter using " + converter;
     }
 }

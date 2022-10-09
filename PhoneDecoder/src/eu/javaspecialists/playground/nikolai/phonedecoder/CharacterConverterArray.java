@@ -14,4 +14,9 @@ public class CharacterConverterArray implements CharacterConverter {
         if (c >= '0' && c <= '9') return c;
         throw new IllegalArgumentException("'" + c + "' is an invalid character");
     }
+
+    @Override
+    public String toString() {
+        return "Array";
+    }
 }

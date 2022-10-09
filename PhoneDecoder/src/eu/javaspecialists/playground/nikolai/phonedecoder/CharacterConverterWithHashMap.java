@@ -31,4 +31,9 @@ public class CharacterConverterWithHashMap implements CharacterConverter {
                     "'" + c + "' is an invalid character");
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "HashMap";
+    }
 }

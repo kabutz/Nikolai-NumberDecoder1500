@@ -46,4 +46,9 @@ public class PhoneNumberDecoderWithNestedIf implements PhoneNumberDecoder {
         }
         return result.toString();
     }
+
+    @Override
+    public String toString() {
+        return "NestedIf";
+    }
 }

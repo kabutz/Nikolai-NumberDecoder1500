@@ -7,8 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CorrectnessTest {
     private static final PhoneNumberDecoder[] decoders = {
             new PhoneNumberDecoderWithNestedIf(),
-            new PhoneNumberDecoderWithArray(),
-            new PhoneNumberDecoderWithSwitch()
+            new PhoneNumberDecoderWithConverter(new CharacterConverterArray()),
+            new PhoneNumberDecoderWithConverter(new CharacterConverterWithHashMap()),
+            new PhoneNumberDecoderWithConverter(new CharacterConverterSwitch()),
     };
 
     @Test
@@ -19,6 +20,7 @@ public class CorrectnessTest {
             assertFalse(decoder.isValidInput("123456"));
             assertFalse(decoder.isValidInput("123456789"));
             assertFalse(decoder.isValidInput("123456789123"));
+            assertFalse(decoder.isValidInput("$#!@#^%$##"));
         }
     }
 
@@ -35,7 +37,6 @@ public class CorrectnessTest {
 
     @Test
     public void testGoodNumber() {
-
         for (PhoneNumberDecoder decoder : decoders) {
             for (String goodNumber : goodNumbers) {
                 assertTrue(decoder.isValidInput(goodNumber));

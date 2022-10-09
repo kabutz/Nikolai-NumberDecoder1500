@@ -21,4 +21,9 @@ public class CharacterConverterSwitch implements CharacterConverter {
                     "'" + c + "' is an invalid character");
         };
     }
+
+    @Override
+    public String toString() {
+        return "Switch";
+    }
 }
