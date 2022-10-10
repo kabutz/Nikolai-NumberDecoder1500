@@ -1,7 +1,18 @@
+package eu.javaspecialists.tutorials.nikolai.numberdecoder;
+
 import java.util.Scanner;
 
 import static java.lang.Character.*;
 
+// TODO: Move everything into packages
+
+// TODO: Get input from user
+// TODO: Determine if input is valid
+// TODO: Know when we are at the end
+// TODO: Convert a single character to the number character
+// TODO: Format a bunch of 10 number characters into a USA String (###) ###-####
+// TODO: Test cases for conversion and formatting
+// TODO: Performance benchmark for formatting and conversion
 public class Main {
     static Scanner sc = new Scanner(System.in);
     static String number;
