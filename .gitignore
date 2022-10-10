@@ -3,4 +3,5 @@
 *.iws
 *.class
 out/
+target/
 .idea/
