@@ -2,7 +2,8 @@ package eu.javaspecialists.tutorials.nikolai.numberdecoder;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CharacterConverterTest {
     @Test
@@ -69,7 +70,7 @@ public class CharacterConverterTest {
     public void testBadCharacters() {
         CharacterConverter converter = new CharacterConverter();
         for (char c = 0; c < 65535; c++) {
-            if (c >= '0' && c <= '9' || c >= 'a' && c <= 'z' || c>= 'A' && c <= 'Z') {
+            if (c >= '0' && c <= '9' || c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
                 // don't test
             } else {
                 char finalC = c;

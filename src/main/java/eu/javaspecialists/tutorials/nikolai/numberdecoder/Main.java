@@ -9,6 +9,7 @@ import java.util.Scanner;
 // TODO: Know when we are at the end
 // Convert a single character to the number character
 // TODO: Format a bunch of 10 number characters into a USA String (###) ###-####
+// TODO: Send the converted phone number somewhere, in this case System.out
 // TODO: Test cases for conversion and formatting
 // TODO: Performance benchmark for formatting and conversion
 public class Main {
