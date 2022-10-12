@@ -7,7 +7,7 @@ import java.util.Scanner;
 // TODO: Get input from user
 // TODO: Determine if input is valid
 // TODO: Know when we are at the end
-// TODO: Convert a single character to the number character
+// Convert a single character to the number character
 // TODO: Format a bunch of 10 number characters into a USA String (###) ###-####
 // TODO: Test cases for conversion and formatting
 // TODO: Performance benchmark for formatting and conversion
