@@ -7,7 +7,7 @@ import static java.lang.Character.*;
 // TODO: Read input from user
 // TODO: Determine if we are at the end
 // TODO: Validating the input (is it 10 characters)
-// TODO: Convert each character 0-9 -> 0-9, A-C -> 2, D-F -> 3, etc.
+// DONE: Convert each character 0-9 -> 0-9, A-C -> 2, D-F -> 3, etc.
 // TODO: Format the final String
 // TODO: Send the final String somewhere, for example System.out
 // TODO: Test cases for the conversion and validation
@@ -20,6 +20,7 @@ public class Main {
 
         number = num;
         StringBuilder numba = new StringBuilder();
+        CharacterConverter converter = new CharacterConverter();
 
         if (number.length() == 10) {
             for (int i = 1; i <= 10; i++) {
@@ -30,31 +31,7 @@ public class Main {
                 if (i == 7)
                     numba.append("-");
                 char c = number.charAt(i - 1);
-                if (isDigit(c)) {
-                    numba.append(c);
-                } else {
-                    if (isLowerCase(c)) {
-                        c = toUpperCase(c);
-                    }
-                    if (c == 'A' || c == 'B' || c == 'C') {
-                        numba.append('2');
-                    } else if (c == 'D' || c == 'E' || c == 'F') {
-                        numba.append('3');
-                    } else if (c == 'G' || c == 'H' || c == 'I') {
-                        numba.append('4');
-                    } else if (c == 'J' || c == 'K' || c == 'L') {
-                        numba.append('5');
-                    } else if (c == 'M' || c == 'N' || c == 'O') {
-                        numba.append('6');
-                    } else if (c == 'P' || c == 'Q' || c == 'R' || c == 'S') {
-                        numba.append('7');
-                    } else if (c == 'T' || c == 'U' || c == 'V') {
-                        numba.append('8');
-                    } else if (c == 'W' || c == 'X' || c == 'Y' || c == 'Z') {
-                        numba.append('9');
-                    }
-
-                }
+                numba.append(converter.convert(c));
             }
 
 
