@@ -1,3 +1,5 @@
+package eu.javaspecialists.tutorials.srp;
+
 import java.util.Scanner;
 
 import static java.lang.Character.*;
